@@ -1,0 +1,218 @@
+{
+ "actions": [],
+ "creation": "2026-10-31 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "user",
+  "practitioner_name",
+  "practitioner_type",
+  "phone",
+  "qualifications",
+  "registration_number",
+  "bio",
+  "photo",
+  "clinic_address",
+  "fee_clinic",
+  "fee_video",
+  "fee_home",
+  "status",
+  "rejection_reason",
+  "therapies",
+  "regions",
+  "rating_average",
+  "rating_count"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "options": "PR-.#####",
+   "default": "PR-.#####",
+   "reqd": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "practitioner_name",
+   "fieldtype": "Data",
+   "label": "Practitioner Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "practitioner_type",
+   "fieldtype": "Select",
+   "label": "Practitioner Type",
+   "options": "Doctor\nTherapist",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "qualifications",
+   "fieldtype": "Small Text",
+   "label": "Qualifications"
+  },
+  {
+   "fieldname": "registration_number",
+   "fieldtype": "Data",
+   "label": "Registration Number"
+  },
+  {
+   "fieldname": "bio",
+   "fieldtype": "Text",
+   "label": "Bio"
+  },
+  {
+   "fieldname": "years_experience",
+   "fieldtype": "Int",
+   "label": "Years of Experience",
+   "default": "0"
+  },
+  {
+   "fieldname": "languages",
+   "fieldtype": "Small Text",
+   "label": "Languages"
+  },
+  {
+   "fieldname": "photo",
+   "fieldtype": "Attach Image",
+   "label": "Photo"
+  },
+  {
+   "fieldname": "clinic_address",
+   "fieldtype": "Small Text",
+   "label": "Clinic Address"
+  },
+  {
+   "fieldname": "fee_clinic",
+   "fieldtype": "Currency",
+   "label": "Fee Clinic",
+   "default": "0"
+  },
+  {
+   "fieldname": "fee_video",
+   "fieldtype": "Currency",
+   "label": "Fee Video",
+   "default": "0"
+  },
+  {
+   "fieldname": "fee_home",
+   "fieldtype": "Currency",
+   "label": "Fee Home",
+   "default": "0"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPending Review\nVerified\nRejected",
+   "default": "Draft",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason",
+   "read_only": 1
+  },
+  {
+   "fieldname": "therapies",
+   "fieldtype": "Table",
+   "label": "Therapies",
+   "options": "Practitioner Therapy"
+  },
+  {
+   "fieldname": "regions",
+   "fieldtype": "Table",
+   "label": "Regions",
+   "options": "Practitioner Region"
+  },
+  {
+   "fieldname": "rating_average",
+   "fieldtype": "Float",
+   "label": "Rating Average",
+   "read_only": 1,
+   "default": "0"
+  },
+  {
+   "fieldname": "rating_count",
+   "fieldtype": "Int",
+   "label": "Rating Count",
+   "read_only": 1,
+   "default": "0"
+  }
+ ],
+ "links": [],
+ "modified": "2026-10-31 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Vaidya",
+ "name": "Practitioner Profile",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Vaidya Admin",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "submit": 1,
+   "cancel": 1,
+   "amend": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  },
+  {
+   "role": "Practitioner",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "submit": 0,
+   "cancel": 0,
+   "amend": 0,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "autoname": "naming_series:",
+ "naming_rule": "By \"Naming Series\" field"
+}
